@@ -109,7 +109,7 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     //these are alternate reward items from quest 12801, item 38633 is chosen by default as the reward
     //player->AddItem(38632, true);//Greatsword of the Ebon Blade
 
-    int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 58);
+    int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 1);
     if (player->getLevel() <= DKL)
     {
         //GiveLevel updates character properties more thoroughly than SetLevel
