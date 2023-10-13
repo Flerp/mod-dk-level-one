@@ -1,10 +1,17 @@
 # ![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) AzerothCore
 
-## mod-skip-dk-starting-area
+## mod-dk-level-one
 
 ## Description
 
-- Skips the Death Knight starting zone, for those who want to make a Death Knight without having to go through the starting area.
+- A fork of https://github.com/azerothcore/mod-skip-dk-starting-area for people who want DKs to act as any other class, starting at level 1.
+- This module performs the following:
+
+1. Skips the DK Starting Zone
+2. Create stat distribution from level 1-54 for DKs
+3. Modify and create new spell ranks for some DK Spells/Abilities, to keep them balanced with other classes as they level
+4. Removes the riding skill and the DK mount (Learnable at level 40 from trainers)
+5. Removes Flight Path learned locations
 
 ## How to use ingame
 
@@ -39,7 +46,8 @@ Creatures.CustomIDs = "190010,55005,999991,25462,98888"
 
 1. Simply place the module under the `modules` directory of your AzerothCore source. 
 2. Re-run CMake and rebuild the AzerothCore source.
-3. Run Sql on world from https://github.com/azerothcore/mod-skip-dk-starting-area/tree/master/sql/world on to the world db.
+3. Run Sql on world from https://github.com/Flerp/mod-dk-level-one/tree/master/sql/world on to the world db.
+
 ## Edit module configuration (optional)
 
 If you need to change the module configuration, go to your server configuration folder (where your worldserver or worldserver.exe is), copy SkipDKModule.conf.dist to SkipDKModule.conf and edit that new file.
@@ -49,3 +57,4 @@ If you need to change the module configuration, go to your server configuration 
 - [acidmanifesto (MDic)](https://github.com/acidmanifesto/TC-Custom-Scripts/tree/main/335%20TC/Official%20Trinitycore%20Custom%20Scripts/Official%20Merged/Skip%20Death%20Knight%20Starter%20Area%20Module)
 - [Jinnaix](https://github.com/Jinnaix) For Translations assistance and sql formatting.
 - AzerothCore: [repository](https://github.com/azerothcore) - [website](http://azerothcore.org/) - [discord chat community](https://discord.gg/PaqQRkd)
+-
