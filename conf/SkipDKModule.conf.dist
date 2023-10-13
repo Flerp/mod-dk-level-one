@@ -35,7 +35,7 @@ GM.Skip.Deathknight.Starter.Enable = 0
 #         Default:    58 - (Default)
 #
 
-Skip.Deathknight.Start.Level = 58
+Skip.Deathknight.Start.Level = 1
 
 #    Skip.Deathknight.Optional.Enable
 #    Enables optional to skip when talking to lich king on first creation of dk.
