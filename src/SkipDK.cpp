@@ -102,13 +102,6 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
         }
     }
 
-    //these are alternate reward items from quest 12679, item 39320 is chosen by default as the reward
-    //player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
-    //player->AddItem(39322, true);//Shroud of the North Wind
-
-    //these are alternate reward items from quest 12801, item 38633 is chosen by default as the reward
-    //player->AddItem(38632, true);//Greatsword of the Ebon Blade
-
     int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 1);
     if (player->getLevel() <= DKL)
     {
@@ -119,19 +112,7 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     //Don't need to save all players, just current
     player->SaveToDB(false, false);
 
-    WorldLocation Aloc = WorldLocation(0, -8866.55f, 671.39f, 97.90f, 5.27f);// Stormwind
-    WorldLocation Hloc = WorldLocation(1, 1637.62f, -4440.22f, 15.78f, 2.42f);// Orgrimmar
-
-    //if (player->GetTeamId() == TEAM_ALLIANCE)
-    //{
-    //    player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
-    //    player->SetHomebind(Aloc, 1637);// Stormwind Homebind location
-    //}
-    //else
-    //{
-    //    player->TeleportTo(1, 1569.59f, -4397.63f, 7.70f, 0.54f);//Orgrimmar
-    //    player->SetHomebind(Hloc, 1653);// Orgrimmar Homebind location
-    //}
+    //Teleport player to their proper starting zone based on their race
     switch (player->getRace())
     {
     case RACE_TAUREN:
