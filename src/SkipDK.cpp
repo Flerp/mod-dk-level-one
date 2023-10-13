@@ -103,11 +103,11 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     }
 
     //these are alternate reward items from quest 12679, item 39320 is chosen by default as the reward
-    player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
-    player->AddItem(39322, true);//Shroud of the North Wind
+    //player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
+    //player->AddItem(39322, true);//Shroud of the North Wind
 
     //these are alternate reward items from quest 12801, item 38633 is chosen by default as the reward
-    player->AddItem(38632, true);//Greatsword of the Ebon Blade
+    //player->AddItem(38632, true);//Greatsword of the Ebon Blade
 
     int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 58);
     if (player->getLevel() <= DKL)
@@ -122,15 +122,48 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     WorldLocation Aloc = WorldLocation(0, -8866.55f, 671.39f, 97.90f, 5.27f);// Stormwind
     WorldLocation Hloc = WorldLocation(1, 1637.62f, -4440.22f, 15.78f, 2.42f);// Orgrimmar
 
-    if (player->GetTeamId() == TEAM_ALLIANCE)
+    //if (player->GetTeamId() == TEAM_ALLIANCE)
+    //{
+    //    player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
+    //    player->SetHomebind(Aloc, 1637);// Stormwind Homebind location
+    //}
+    //else
+    //{
+    //    player->TeleportTo(1, 1569.59f, -4397.63f, 7.70f, 0.54f);//Orgrimmar
+    //    player->SetHomebind(Hloc, 1653);// Orgrimmar Homebind location
+    //}
+    switch (player->getRace())
     {
-        player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
-        player->SetHomebind(Aloc, 1637);// Stormwind Homebind location
-    }
-    else
-    {
-        player->TeleportTo(1, 1569.59f, -4397.63f, 7.70f, 0.54f);//Orgrimmar
-        player->SetHomebind(Hloc, 1653);// Orgrimmar Homebind location
+    case RACE_TAUREN:
+        player->TeleportTo(1, -2917.58f, -257.98f, 52.9968f, 0.00f)
+        break;
+    case RACE_HUMAN:
+        player->TeleportTo(0, -8949.95f, -132.493f, 83.5312f, 0.00f)
+        break;
+    case RACE_NIGHTELF:
+        player->TeleportTo(1, 10311.3f, 832.463f, 1326.41f, 5.69632f)
+        break;
+    case RACE_DWARF:
+        player->TeleportTo(0, -6240.32f, 331.033f, 382.758f, 6.17716f)
+        break;
+    case RACE_GNOME:
+        player->TeleportTo(0, -6240.32f, 331.033f, 382.758f, 0.00f)
+        break;
+    case RACE_DRAENEI:
+        player->TeleportTo(530, -3961.64f, -13931.2f, 100.615f, 2.08364f)
+        break;
+    case RACE_BLOODELF:
+        player->TeleportTo(530, 10349.6f, -6357.29f, 33.4026f, 5.31605f)
+        break;
+    case RACE_ORC:
+        player->TeleportTo(1, -618.518f, -4251.67f, 38.718f, 0.00f)
+        break;
+    case RACE_TROLL:
+        player->TeleportTo(1, -618.518f, -4251.67f, 38.718f, 0.00f)
+        break;
+    case RACE_UNDEAD_PLAYER:
+        player->TeleportTo(0, 1676.71f, 1678.31f, 121.67f, 2.70526f)
+        break;
     }
 }
 
