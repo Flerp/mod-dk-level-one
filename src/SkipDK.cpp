@@ -116,34 +116,34 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     switch (player->getRace())
     {
     case RACE_TAUREN:
-        player->TeleportTo(1, -2917.58f, -257.98f, 52.9968f, 0.00f)
+        player->TeleportTo(1, -2917.58f, -257.98f, 52.9968f, 0.00f);
         break;
     case RACE_HUMAN:
-        player->TeleportTo(0, -8949.95f, -132.493f, 83.5312f, 0.00f)
+        player->TeleportTo(0, -8949.95f, -132.493f, 83.5312f, 0.00f);
         break;
     case RACE_NIGHTELF:
-        player->TeleportTo(1, 10311.3f, 832.463f, 1326.41f, 5.69632f)
+        player->TeleportTo(1, 10311.3f, 832.463f, 1326.41f, 5.69632f);
         break;
     case RACE_DWARF:
-        player->TeleportTo(0, -6240.32f, 331.033f, 382.758f, 6.17716f)
+        player->TeleportTo(0, -6240.32f, 331.033f, 382.758f, 6.17716f);
         break;
     case RACE_GNOME:
-        player->TeleportTo(0, -6240.32f, 331.033f, 382.758f, 0.00f)
+        player->TeleportTo(0, -6240.32f, 331.033f, 382.758f, 0.00f);
         break;
     case RACE_DRAENEI:
-        player->TeleportTo(530, -3961.64f, -13931.2f, 100.615f, 2.08364f)
+        player->TeleportTo(530, -3961.64f, -13931.2f, 100.615f, 2.08364f);
         break;
     case RACE_BLOODELF:
-        player->TeleportTo(530, 10349.6f, -6357.29f, 33.4026f, 5.31605f)
+        player->TeleportTo(530, 10349.6f, -6357.29f, 33.4026f, 5.31605f);
         break;
     case RACE_ORC:
-        player->TeleportTo(1, -618.518f, -4251.67f, 38.718f, 0.00f)
+        player->TeleportTo(1, -618.518f, -4251.67f, 38.718f, 0.00f);
         break;
     case RACE_TROLL:
-        player->TeleportTo(1, -618.518f, -4251.67f, 38.718f, 0.00f)
+        player->TeleportTo(1, -618.518f, -4251.67f, 38.718f, 0.00f);
         break;
     case RACE_UNDEAD_PLAYER:
-        player->TeleportTo(0, 1676.71f, 1678.31f, 121.67f, 2.70526f)
+        player->TeleportTo(0, 1676.71f, 1678.31f, 121.67f, 2.70526f);
         break;
     }
 }
