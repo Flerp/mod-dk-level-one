@@ -9,9 +9,10 @@
 
 1. Skips the DK Starting Zone
 2. Create stat distribution from level 1-54 for DKs
-3. Modify and create new spell ranks for some DK Spells/Abilities, to keep them balanced with other classes as they level
-4. Removes the riding skill and the DK mount (Learnable at level 40 from trainers)
-5. Removes Flight Path learned locations
+3. Teleports characters to their proper starting zone
+4. NYE - Modify and create new spell ranks for some DK Spells/Abilities, to keep them balanced with other classes as they level
+5. NYE - Removes the riding skill and the DK mount (Learnable at level 40 from trainers)
+6. NYE - Removes Flight Path learned locations
 
 ## How to use ingame
 
