@@ -31,7 +31,7 @@
 
 void AddSkipDKScripts();
 
-void Addmod_skip_dk_starting_areaScripts()
+void Addmod_dk_level_oneScripts()
 {
     AddSkipDKScripts();
 }
