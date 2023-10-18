@@ -49,8 +49,6 @@ constexpr auto YESSKIPDK = 1;
 
 void Azerothcore_skip_deathknight_HandleSkip(Player* player)
 {
-    //Not sure where DKs were supposed to pick this up from, leaving as the one manual add
-    player->AddItem(6948, true); //Hearthstone
 
     // these are all the starter quests that award talent points, quest items, or spells
     int STARTER_QUESTS[33] = { 12593, 12619, 12842, 12848, 12636, 12641, 12657, 12678, 12679, 12680, 12687, 12698, 12701, 12706, 12716, 12719, 12720, 12722, 12724, 12725, 12727, 12733, -1, 12751, 12754, 12755, 12756, 12757, 12779, 12801, 13165, 13166 };
@@ -109,6 +107,24 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
         player->GiveLevel(DKL);
     }
 
+    //All Player Items rewarded by quests (And starting truffles) holding there here in case needed later
+    //int STARTER_QUEST_ITEMS[31] = { 34652, 34655, 34659, 34650, 34653, 34649, 34651, 34656, 34648, 34657, 34658, 38147, 38707, 38662, 38671, 39320, 39208, 38674, 38666, 38669, 38668, 38672, 38670, 38667, 38665, 40483, 38675, 38665, 38661, 38633, 41751 };
+
+    // Purges items from players
+    for (uint8 b = INVENTORY_SLOT_ITEM_START; b < INVENTORY_SLOT_ITEM_END; b++)
+    {
+        player->DestroyItem(INVENTORY_SLOT_BAG_0, b, true);
+    }
+    for (uint8 c = INVENTORY_SLOT_BAG_START; c < INVENTORY_SLOT_BAG_END; c++)
+    {
+        for (uint8 i = 0; i < MAX_BAG_SIZE; i++)
+        {
+            player->DestroyItem(c, i, true);
+        }
+    }
+
+    player->AddItem(6948, true); //Hearthstone
+
     //Don't need to save all players, just current
     player->SaveToDB(false, false);
 
@@ -157,7 +173,7 @@ public:
     {
         if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Announce.enable", true) && (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Enable", true) || sConfigMgr->GetOption<bool>("Skip.Deathknight.Optional.Enable", true)))
         {
-            ChatHandler(Player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Azerothcore Skip Deathknight Starter |rmodule.");
+            ChatHandler(Player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Level 1 DK |rmodule.");
         }
     }
 };
