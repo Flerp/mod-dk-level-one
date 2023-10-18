@@ -125,6 +125,21 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
 
     player->AddItem(6948, true); //Hearthstone
 
+    //Remove Riding Skill
+    player->SetSkill(762, 0, 0, 0);
+
+    //Remove Horse Mount
+    player->removeSpell(48778, 255, true);
+
+    // Remove DK Starting Spells minus blood strike and death gate
+    int STARTER_DK_SPELLS[5] = { 47541, 45462, 45477, 49576, 48266 };
+
+    for (int DKSpell : STARTER_DK_SPELLS)
+    {
+        player->removeSpell(DKSpell, 255, true);
+    }
+
+
     //Don't need to save all players, just current
     player->SaveToDB(false, false);
 
